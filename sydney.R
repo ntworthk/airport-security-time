@@ -1,0 +1,26 @@
+library(httr)
+
+df_old <- readRDS("data/sydney-wait-time.rds")
+
+headers <- c(
+  `Subscription-Key` = "58f1463920944bbf9da9d088f467fc9a"
+)
+
+res <- GET(url = "https://api.sydneyairport.com.au/GetSecurityWaitTime", add_headers(.headers=headers))
+
+x <- content(res)
+
+df <- lapply(x, function(y) {
+  z <- as.data.frame(y$data)
+  z$terminal <- y$terminal
+  z
+}) |> 
+  do.call(what = rbind, args = _)
+
+df$time <- Sys.time()
+
+df <- unique(df)
+
+df <- rbind(df_old, df)
+
+saveRDS(df, "data/sydney-wait-time.rds")
