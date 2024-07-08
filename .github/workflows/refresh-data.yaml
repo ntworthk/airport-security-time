@@ -20,8 +20,6 @@ jobs:
         with:
           use-public-rspm: true
 
-      - uses: r-lib/actions/setup-pandoc@v2
-
       - name: Install httr
         run: Rscript -e 'install.packages(c("httr"))'
 
