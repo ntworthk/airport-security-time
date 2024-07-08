@@ -17,8 +17,6 @@ df <- lapply(x, function(y) {
 }) |> 
   do.call(what = rbind, args = _)
 
-print(nrow(df))
-
 df$time <- Sys.time()
 
 df <- unique(df)
