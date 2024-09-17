@@ -21,7 +21,7 @@ jobs:
           use-public-rspm: true
 
       - name: Install httr
-        run: Rscript -e 'install.packages(c("httr"))'
+        run: Rscript -e 'install.packages(c("httr", "xml2"))'
 
       - name: Get data
         run: Rscript -e 'source("sydney.R", echo = TRUE)'
