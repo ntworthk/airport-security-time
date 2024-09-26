@@ -6,7 +6,7 @@ headers <- c(
   `Subscription-Key` = "09af684d342c4482930c24ea76f3aeee"
 )
 
-res <- GET(url = "https://api.sydneyairport.com.au/GetSecurityWaitTime", add_headers(.headers=headers))
+res <- GET(url = "https://api.sydneyairport.com.au/external/GetSecurityWaitTime", add_headers(.headers=headers))
 
 x <- content(res)
 
