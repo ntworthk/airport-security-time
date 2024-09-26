@@ -3,7 +3,7 @@ library(httr)
 df_old <- readRDS("data/sydney-wait-time.rds")
 
 headers <- c(
-  `Subscription-Key` = "58f1463920944bbf9da9d088f467fc9a"
+  `Subscription-Key` = "09af684d342c4482930c24ea76f3aeee"
 )
 
 res <- GET(url = "https://api.sydneyairport.com.au/GetSecurityWaitTime", add_headers(.headers=headers))
