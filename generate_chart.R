@@ -29,7 +29,7 @@ g <- read_rds("data/sydney-wait-time.rds") |>
     legend.margin = margin(-10, 0, 0, 0)
   )
 
-ggsave(filename = "g.svg",
+ggsave(filename = "g.png",
        plot = g,
        width = 17.00,
        height = 8,
