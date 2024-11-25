@@ -19,7 +19,7 @@ g <- read_rds("data/sydney-wait-time.rds") |>
   scale_y_continuous(expand = expansion(mult = c(0.001, 0.05)), labels = NULL, breaks = NULL) +
   scale_colour_manual(values = c("#6A5ACD", "#20B2AA", "#FFD700")) +
   labs(y = "Security wait time (mins)", colour = NULL, x = NULL) +
-  theme_minimal(base_size = 20) +
+  theme_minimal(base_size = 16) +
   theme(
     panel.background = element_rect(fill = "#FFE5B4", colour = NA),
     plot.background = element_rect(fill = "#FFE5B4", colour = NA),
@@ -33,7 +33,7 @@ g <- read_rds("data/sydney-wait-time.rds") |>
 ggsave(filename = "g.png",
        plot = g,
        width = 17.00,
-       height = 8,
+       height = 17,
        units = "cm",
        bg = "transparent"
 )
