@@ -4,6 +4,7 @@ offset <- 0.02
 
 g <- read_rds("data/sydney-wait-time.rds") |> 
   as_tibble() |> 
+  mutate(time = with_tz(time, tzone = "Australia/Sydney")) |> 
   group_by(dow = wday(date, label = TRUE, week_start = 1), hour = hour(time), terminal) |> 
   summarise(value = mean(value), .groups = "drop") |> 
   mutate(value = case_when(
